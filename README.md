@@ -2,7 +2,6 @@
 
 ![License](https://img.shields.io/github/license/Benzo-Fury/Hierarchia)
 ![Version](https://img.shields.io/npm/v/hierarchia)
-![Build](https://img.shields.io/github/actions/workflow/status/Benzo-Fury/Hierarchia/build.yml)
 ![Bun](https://img.shields.io/badge/built_with-bun-fbf3e8)
 
 Ultra light-weight, sub-millisecond graph layout engine with greedy allocation and poly-relationship support.
