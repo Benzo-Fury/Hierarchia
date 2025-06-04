@@ -16,6 +16,8 @@ export class HGraphBuilder {
    */
   private top?: HRawNode;
 
+  private usedIds = new Set<string>();
+
   /**
    * Creates a new node and optionally attaches it to a parent.
    *
@@ -24,6 +26,11 @@ export class HGraphBuilder {
    * @returns The newly created `HRawNode` instance.
    */
   public addNode(id: string, parent?: HRawNode): HRawNode {
+    if (this.usedIds.has(id)) {
+      throw new Error(`Node ID "${id}" is already in use`);
+    }
+    this.usedIds.add(id);
+    
     const node: HRawNode = {
       id,
       children: [],

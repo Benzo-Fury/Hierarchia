@@ -29,6 +29,9 @@ export class GSA {
    * @param upsert Used to offset object to the right if space is taken. Error will not be thrown if this is true.
    */
   public allocate(xFrom: number, xTo: number, id: unknown, upsert = false) {
+    if (xFrom > xTo) {
+      throw new Error("Invalid dimensions: xFrom must be less than xTo");
+    }
     const dimensions = [xFrom, xTo] as [number, number];
 
     if (this.overlaps(dimensions)) {
