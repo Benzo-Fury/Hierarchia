@@ -1,0 +1,111 @@
+{
+  "id": "1000",
+  "parents": [],
+  "partners": [
+    {
+      "id": "1001",
+      "parents": [],
+      "children": [],
+      "partners": []
+    }
+  ],
+  "children": [
+    {
+      "id": "2000",
+      "parents": [],
+      "partners": [
+        {
+          "id": "2001",
+          "parents": [],
+          "children": [],
+          "partners": []
+        }
+      ],
+      "children": [
+        {
+          "id": "3000",
+          "parents": [],
+          "partners": [],
+          "children": [
+            {
+              "id": "4000",
+              "parents": [],
+              "partners": [],
+              "children": []
+            },
+            {
+              "id": "4001",
+              "parents": [],
+              "partners": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "3001",
+          "parents": [],
+          "partners": [],
+          "children": []
+        },
+        {
+          "id": "3002",
+          "parents": [],
+          "partners": [],
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "2002",
+      "parents": [],
+      "partners": [
+        {
+          "id": "2003",
+          "parents": [],
+          "children": [],
+          "partners": []
+        }
+      ],
+      "children": [
+        {
+          "id": "3003",
+          "parents": [],
+          "partners": [],
+          "children": [
+            {
+              "id": "4002",
+              "parents": [],
+              "partners": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "3004",
+          "parents": [],
+          "partners": [],
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "2004",
+      "parents": [],
+      "partners": [],
+      "children": [
+        {
+          "id": "3005",
+          "parents": [],
+          "partners": [],
+          "children": []
+        },
+        {
+          "id": "3006",
+          "parents": [],
+          "partners": [],
+          "children": []
+        }
+      ]
+    }
+  ]
+}

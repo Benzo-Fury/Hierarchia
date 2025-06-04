@@ -1,0 +1,11 @@
+/.vscode
+/benchmark
+/node_modules
+/public
+/scripts
+/src
+.gitignore
+.gitattributes
+bun.lock
+tsconfig.json
+AGENT.md
