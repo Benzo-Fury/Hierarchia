@@ -2,7 +2,8 @@
   "name": "hierarchia",
   "description": "Sub-millisecond graph layout engine with greedy allocation and poly-relationship support.",
   "keywords": ["tree", "graph", "hierarchy"],
-  "module": "src/index.ts",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "type": "module",
   "devDependencies": {
     "@types/bun": "latest",
