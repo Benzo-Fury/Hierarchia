@@ -30,10 +30,8 @@ export class HNode {
   /**
    * Converts a raw node structure into an `HNode` instance.
    * Coordinates and layout information will be computed later.
-   * 
-   * @param name - Optional name to give the node.
    */
-  public static fromRaw(raw: HRawNode, name?: string): HNode {
-    return new HNode(raw.id);
+  public static fromRaw(raw: HRawNode): HNode {
+    return new HNode(raw.id, raw.name);
   }
 }

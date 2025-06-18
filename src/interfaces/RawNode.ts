@@ -7,6 +7,7 @@
  * @example
  * const node: HRawNode = {
  *   id: "1234",
+ *   name: "John Doe", // Optional name for the node
  *   parents: [], // Top node
  *   children: [
  *     {
@@ -25,6 +26,7 @@
  */
 export interface HRawNode {
   id: string;
+  name?: string;
   children: HRawNode[];
   partners: HRawNode[];
 }
