@@ -17,6 +17,11 @@ export class HGraphBuilder {
   private top?: HRawNode;
 
   private usedIds = new Set<string>();
+  
+  /**
+   * Array containing all nodes in the graph for easy lookup
+   */
+  private nodes: HRawNode[] = [];
 
   /**
    * Creates a new node and optionally attaches it to a parent.
@@ -37,6 +42,9 @@ export class HGraphBuilder {
       partners: [],
     };
 
+    // Store the node in our nodes array
+    this.nodes.push(node);
+
     // If this is the first node, treat it as the top/root of the graph
     if (!this.top) {
       this.top = node;
@@ -51,27 +59,38 @@ export class HGraphBuilder {
   }
 
   /**
-   * Creates a directional or bidirectional edge between two nodes.
+   * Creates a directional or bidirectional edge between two nodes using their IDs.
    *
-   * @param n1 - The first node in the relationship.
+   * @param id1 - The ID of the first node in the relationship.
    * @param t - The type of relationship: `"parent_of"`, `"child_of"`, or `"partner_of"`.
-   * @param n2 - The second node in the relationship.
+   * @param id2 - The ID of the second node in the relationship.
    *
    * @throws If a circular or duplicate partner relationship is attempted.
+   * @throws If either node ID is not found in the graph.
    */
   public addEdge(
-    n1: HRawNode,
-    t: "parent_of" | "partner_of" | "child_of",
-    n2: HRawNode
+    id1: string,
+    t: "PARENT_OF" | "PARTNER_OF" | "CHILD_OF",
+    id2: string
   ) {
+    const n1 = this.findNode(id1);
+    const n2 = this.findNode(id2);
+
+    if (!n1) {
+      throw new Error(`Node with ID "${id1}" not found`);
+    }
+    if (!n2) {
+      throw new Error(`Node with ID "${id2}" not found`);
+    }
+
     switch (t) {
-      case "parent_of":
+      case "PARENT_OF":
         n1.children.push(n2);
         break;
-      case "child_of":
+      case "CHILD_OF":
         n2.children.push(n1);
         break;
-      case "partner_of":
+      case "PARTNER_OF":
         // Prevent duplicate or circular partnerships
         if (
           n2.partners.find((n) => n.id === n1.id) ||
@@ -100,4 +119,14 @@ export class HGraphBuilder {
 
     return this.top;
   }
+
+    /**
+   * Finds a node by its ID
+   * 
+   * @param id - The ID of the node to find
+   * @returns The found node or undefined if not found
+   */
+    private findNode(id: string): HRawNode | undefined {
+      return this.nodes.find(node => node.id === id);
+    }
 }
