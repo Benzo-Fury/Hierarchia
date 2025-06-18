@@ -18,7 +18,7 @@ export class HGraph {
    * The total width of the graph in pixels.
    * This may be set externally after layout to reflect actual horizontal usage.
    */
-  public width?: number;
+  public width: number;
 
   /**
    * The ordered list of generations in the graph.
