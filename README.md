@@ -72,6 +72,11 @@ HEngine.config = {
     width: 40,
     height: 80,
     gap: 20,
+    maxNameLength: 15,
+  },
+  text: {
+    charWidth: 8,
+    padding: 10,
   },
 };
 ```
@@ -81,6 +86,18 @@ HEngine.config = {
 ![Badge](https://img.shields.io/badge/-Graph_Padding-ff90c6)
 ![Badge](https://img.shields.io/badge/-Generation_Gap-7f75ee)
 ![Badge](https://img.shields.io/badge/-Node_Gap-8cf56e)
+![Badge](https://img.shields.io/badge/-Text_Width-ff6b6b)
+
+### 📝 Text Width Calculation
+
+Nodes with names automatically calculate their horizontal space based on the text content. The system:
+
+- **Truncates** names longer than `maxLength` characters
+- **Calculates** width using `charWidth` × character count + `padding`
+- **Uses** the larger of base node width or calculated text width
+- **Configurable** via the `text` configuration object
+
+This ensures nodes with names have adequate space for text display while maintaining layout efficiency.
 ## 🚀 Performance
 
 ```
@@ -134,8 +151,6 @@ To render the graph, you'll need access to each node’s position:
 ```ts
 graph.generations.groups.nodes.x // or .y
 ```
-
-Optionally to create edges for poly relationships that look similar to this:
 
 ## 💡 Credits
 

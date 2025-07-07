@@ -26,9 +26,14 @@ export class HEngine {
       gap: 100, // Vertical gap between generations
     },
     node: {
-      width: 40, // Default node width
       height: 80, // Default node height
       gap: 20, // Horizontal gap between nodes
+      xPadding: 24, // Global X axis node padding
+      maxNameLength: 15, // Maximum number of characters to display
+    },
+    text: {
+      charWidth: 8, // Approximate width per character in pixels
+      padding: 10, // Additional padding around text
     },
   };
 
