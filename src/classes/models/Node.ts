@@ -47,7 +47,7 @@ export class HNode {
   };
 
   constructor(public readonly id: string, name?: string) {
-    name = name ?? "Unnamed Node";
+    this.name = name ?? "Unnamed Node";
   }
 
   /**
