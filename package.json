@@ -1,5 +1,6 @@
 {
   "name": "hierarchia",
+  "version": "1.0.0",
   "description": "Sub-millisecond graph layout engine with greedy allocation and poly-relationship support.",
   "keywords": ["tree", "graph", "hierarchy"],
   "module": "dist/index.js",
